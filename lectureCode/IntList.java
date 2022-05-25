@@ -39,10 +39,15 @@ public class IntList {
       return rest.get(i-1);
    }
 
+   public IntList addFirst(int x) {
+     return new IntList(x, this);
+   }
+
    public static void main(String[] args) {
       IntList L = new IntList(15, null);
       L = new IntList(10, L);
-      L = new IntList(5, L)
+      L = new IntList(5, L);
+      L = L.addFirst(3);
 
       System.out.println(L.size());
    }
@@ -67,4 +72,5 @@ public class IntList {
      L.rest = dincrList(L.rest, x);
 
      return L;
+  }
 }
